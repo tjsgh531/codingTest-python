@@ -38,3 +38,6 @@ def solution(record):
     
     return answer
 
+def solution2(record):
+    nicknamedic = {rec.split(' ')[1] : rec.split(' ')[-1] for rec in record if not rec.split(' ')[0] != 'Leave'}
+    printlist = [f"{nicknamedic[rec.split(' ')[1]]}님이 입장 했습니다." if rec.startswith('Enter') else f"{nicknamedic[rec.split(' ')[1]]}님이 퇴장하셨습니다." for rec in record if not rec.split(' ')[0] =='Change' ]
