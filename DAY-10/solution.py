@@ -6,7 +6,8 @@ def solution(lines):
     lineslist = [line.split() for line in lines]
     callineslist = []
     for value in lineslist:
-        end = time.mktime(datetime.datetime.strptime(value[0]+value[1],"%Y-%m-%d%H:%M:%S.%f").timetuple())
+        end = long(time.mktime(datetime.datetime.strptime(value[0]+value[1],"%Y-%m-%d%H:%M:%S.%f").timetuple())+0.5*1000)
+        print(datetime.datetime.fromtimestamp(end))
         taketime = float(re.sub('s$','', value[-1]))
         start = end - float(datetime.timedelta(seconds=taketime).total_seconds()) + float(datetime.timedelta(seconds=0.001).total_seconds())
         callineslist.append((start, end))
