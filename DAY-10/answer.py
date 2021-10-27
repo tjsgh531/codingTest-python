@@ -6,6 +6,7 @@ def solution(lines):
     for line in lines:
         totalLines += 1
         type(line)
+
         (d,s,t) = line.split(" ")
 
        ##time to float
@@ -18,7 +19,7 @@ def solution(lines):
 
     #count the maxTraffic
     S.sort()
-
+    
     curTraffic = 0
     maxTraffic = 0
     countE = 0
