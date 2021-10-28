@@ -1,13 +1,11 @@
-import re
 def solution(s):
-    if len(s) == 0: return 1
-    strlist =list(set(s))
-    for value in strlist :
-        if not(s == re.sub(value+'{2}','',s)):
-            return solution(re.sub(value+'{2}','',s))
+    stack = [None]
+    for value in s:
+        if stack[-1] == value:
+            stack.pop()
         else:
-            continue
-    return 0
+            stack.append(value)
+    return 1 if len(stack) == 1 else 0
 
 
     
