@@ -1,0 +1,8 @@
+1. itertools 모듈
+itertools.combinations(리스트, 개수)
+=> 튜플 형태의 요소를 가지고 있는 리스트 반환
+
+2. collections 모듈
+요소의 개수대로 정렬하기 쉬움
+
+=> 이것은 모르면 list.count()함수를 사용하여 구현 가능하기는 함
