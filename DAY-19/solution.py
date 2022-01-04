@@ -1,14 +1,20 @@
 import re
 def solution(s):
-    temp = re.sub('^{|}$','',s)
-    print(temp)
-
-    test2 = re.findall('{[\d,]+}', s)
-    print(test2)
-    print(len(test2))
-
-    return 0
+    temp = re.sub('^[{]|[}]$',"",s)
+    temp = re.sub('},',"}!",temp)
+    targetlist = temp.split("!")
+    targetlist.sort(key=len)
     
+    answer =[]
+    for value in targetlist:
+        templist = re.findall('\d+',value)
+        for item in templist:
+            if item not in answer:
+                answer.append(item)
+    
+    answer = list(map(int, answer))
+    
+    return answer;
     
 #     temp = re.sub('},',"}!",temp)
 #     targetlist = temp.split("!")
